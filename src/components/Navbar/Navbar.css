@@ -16,3 +16,21 @@
   color: white;
   font-family: "Metamorphous", cursive;
 }
+
+.cart-counter {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-counter span {
+  position: absolute;
+  top: -20px;
+  right: -15px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 100px;
+  background: rgba(179, 0, 0, 0.493);
+  padding: 5px;
+  color: white;
+}

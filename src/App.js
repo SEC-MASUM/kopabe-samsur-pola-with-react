@@ -2,9 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Cart from "./components/Cart/Cart";
-import Header from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Shop from "./components/Shop/Shop";
 import Modal from "react-modal";
+import { AiFillCloseSquare } from "react-icons/ai";
 
 const customStyles = {
   content: {
@@ -48,16 +49,18 @@ function App() {
   }, []);
   return (
     <div>
-      <Header></Header>
+      <Navbar toggleModel={openModal} cartItems={cartItems}></Navbar>
       <div>
-        <button onClick={openModal}>Open Modal</button>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <button onClick={closeModal}>Close</button>
+          <AiFillCloseSquare
+            size="3rem"
+            onClick={closeModal}
+          ></AiFillCloseSquare>
           {cartItems.map((cartItem) => (
             <Cart cartItem={cartItem} key={cartItem.id}></Cart>
           ))}
